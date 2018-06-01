@@ -4,16 +4,16 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/fragment"
+        android:id="@+id/fragmentLight"
         android:name="com.coolzhye.androidexercise1.LightFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
 
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="com.coolzhye.androidexercise1.StorageFragment"
+    <FrameLayout
+        android:id="@+id/frameStorage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="1">
+    </FrameLayout>
 </LinearLayout>

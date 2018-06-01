@@ -4,7 +4,6 @@ package com.coolzhye.androidexercise1;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,6 @@ public class StorageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.fragment_storage, container, false);
 
         rootView.findViewById(R.id.btnMinus).setOnClickListener(new View.OnClickListener() {
@@ -49,7 +47,6 @@ public class StorageFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.d("ORIENTATION", "onResume");
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(getContext().MODE_PRIVATE);
         number = sharedPreferences.getInt(KEY_NUMBER, 0);
@@ -59,8 +56,7 @@ public class StorageFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Log.d("ORIENTATION", "onPause");
-        Log.d("ORIENTATION", (getResources().getConfiguration().orientation == 1 ? "PORTRAIT - " : "LANDSCAPE - ") + Integer.toString(number));
+
         SharedPreferences sharedPreferences = getActivity().getPreferences(getContext().MODE_PRIVATE);
         sharedPreferences.edit().putInt(KEY_NUMBER, number).commit();
     }
